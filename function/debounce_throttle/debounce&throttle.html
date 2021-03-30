@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <div>
+          <button id="throttle">函数节流</button>
+          <button id="debounce"">函数防抖</button>
+     </div>
+     <script type="text/javascript" src="throttle.js"></script>
+     <script type="text/javascript" src="debounce.js"></script>
+     <script type="text/javascript">
+          function handleClick(event) {
+               console.log(`我是点击处理器`, this, event)
+          }
+          document.getElementById("throttle").onclick = throttle(handleClick,2000);
+          document.getElementById("debounce").onclick = debounce(handleClick,2000);
+     </script>
+
+</body>
+</html>
