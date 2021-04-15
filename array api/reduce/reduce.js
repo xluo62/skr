@@ -2,15 +2,28 @@
  * reduce(callback, init)
  */
 
-Array.prototype.reduce = function (callback, init) {
-  //
-  let array = this;
-  let accumulator = init ? init : array[0];
+// Array.prototype.reduce = function (callback, init) {
+//   //
+//   let array = this;
+//   let accumulator = init ? init : array[0];
 
-  for (let index = init ? 0 : 1; index < array.length; index++) {
-    //console.log(index);
-    const element = array[index];
-    accumulator = callback(accumulator, element, index, array);
+//   for (let index = init ? 0 : 1; index < array.length; index++) {
+//     //console.log(index);
+//     const element = array[index];
+//     accumulator = callback(accumulator, element, index, array);
+//   }
+
+//   return accumulator;
+// };
+window = {};
+Array.prototype.reduce = function (callback, init) {
+  if (this === window || this === undefined) {
+    throw new Error();
+  }
+  const array = this;
+  let accumulator = init || array[0];
+  for (let i = init ? 0 : 1; i < array.length; i++) {
+    accumulator = callback(accumulator, array[i], i, array);
   }
 
   return accumulator;
