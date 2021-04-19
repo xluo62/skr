@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import React, { Component } from "react";
 import Test from "./component/timeOut/Test";
 import Modal from "./component/modal/Modal";
-class App extends Component {
+class App2 extends Component {
   state = {
     visible: false,
   };
@@ -23,7 +23,7 @@ class App extends Component {
     const { visible } = this.state;
     return (
       <>
-        <p>内容轮番显</p>
+        <p>内容轮番显示</p>
         <Test
           open={true}
           time={1000}
@@ -48,4 +48,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App2;
